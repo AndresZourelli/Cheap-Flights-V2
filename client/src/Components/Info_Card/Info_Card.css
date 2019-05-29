@@ -1,0 +1,62 @@
+.holder {
+	flex: 0 0 25%;
+	font-family: 'Nunito', sans-serif;
+	height: 450px;
+	width: 100%;
+	background-color: white;
+	/* box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.2); */
+	transition: all .3s ease;
+	position: relative;
+	margin: 0 auto;
+	min-width: 400px;
+	border: 1px rgb(184, 184, 184) solid;
+}
+
+.holder:hover {
+	background-color: #66062c;
+	color: white;
+
+}
+
+.link-style {
+	color: black;
+}
+
+.link-style:hover,
+.link-style:active {
+	text-decoration: none;
+	color: white;
+
+
+}
+
+.image_destination {
+	height: 70%;
+	width: 100%;
+	background-size: cover;
+	background-position: right center;
+}
+
+.text_container {
+
+	position: relative;
+	height: 30%;
+	width: 100%;
+	text-align: left;
+	padding: 3% 3% 5% 3%;
+}
+
+.card_container h1 {
+	margin: 0;
+}
+
+.card_container p {
+	margin: 0 0 30px;
+}
+
+.subtitle {
+	font-weight: 700;
+	margin: 0 0 15px;
+	font-size: 1.25rem;
+	color: #E76C67;
+}

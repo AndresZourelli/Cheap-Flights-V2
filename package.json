@@ -1,0 +1,26 @@
+{
+  "name": "cheap-flights",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "cd server && nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "start": "cd server && nodemon server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "main": "index.js",
+  "author": "Andres <azourelli@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^3.0.5",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "knex": "^0.16.3",
+    "nodemailer": "^6.0.0",
+    "nodemon": "^1.18.9",
+    "pg": "^7.8.0"
+  }
+}

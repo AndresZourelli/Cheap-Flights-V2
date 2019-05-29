@@ -1,0 +1,53 @@
+
+.App {
+  text-align: center;
+  font-family: 'Nunito', sans-serif; 
+  height: 100%;
+}
+#root {
+  height: 100%;
+}
+#full-height{
+  height: 100%;
+}
+.view-container {
+  height:100%;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.fly-enter{
+  opacity: 0;
+  transform: translateY(-5000px);
+}
+
+.fly-enter-active{
+  opacity: 1;
+  transform: translateY(0);
+  transition: opactiy transform 3000ms ease-in;
+}
+
+.fly-exit{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fly-exit-active{
+  opacity: 0;
+  transform: translateY(-5000px);
+  transition: opactiy transform 3000ms ease-out;
+}
+
+

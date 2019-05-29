@@ -1,0 +1,32 @@
+.contact-form {
+    display: flex;
+    align-items: center;
+    height: 500px;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    margin: 100px auto;
+    border: 1px solid rgb(187, 184, 184);
+}
+
+.message {
+    width: 30%;
+}
+
+.contact-form label {
+    margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 400px;
+}
+
+.button--container {
+    margin: 0 auto;
+}
+
+.button-primary {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
