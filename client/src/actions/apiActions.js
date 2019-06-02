@@ -20,16 +20,17 @@ export const getFlights = (value) => (dispatch) => {
 				payload: cities.data.data
 			});
 
-			dispatch({
-				type: GET_CITY_IMAGE,
-				payload: cities.data.data[0].cityTo
-			});
 			unsplash.search
 				.photos(cities.data.data[0].cityTo, 1, 1)
 				.then((json) => {
 					return json.json();
 				})
-				.then((json) => console.log(json.results[0].urls));
+				.then((json) => {
+					dispatch({
+						type: GET_CITY_IMAGE,
+						payload: json.results[0].urls
+					});
+				});
 		})
 		.catch((err) => console.log(err));
 };
