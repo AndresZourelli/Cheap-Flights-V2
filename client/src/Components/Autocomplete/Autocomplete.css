@@ -1,0 +1,12 @@
+.dropdown {
+    cursor: pointer;
+}
+
+.dropdown_list {
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    background-color: white;
+    overflow: auto;
+    height: 50vh;
+}
