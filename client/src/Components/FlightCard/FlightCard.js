@@ -27,10 +27,6 @@ const FlightCard = (props) => {
 						</div>
 					</div>
 					<div className="image-container">
-						<img
-							src={require(`./../../images/Destination City/${flight.destination}.jpg`)}
-							alt={flight.departingcity}
-						/>
 						<div className="shadowbox">
 							<div className="shadowbox-text">
 								<div className="CityData-flight-travel-info-parent">

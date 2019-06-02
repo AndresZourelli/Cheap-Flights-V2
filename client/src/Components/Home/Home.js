@@ -5,11 +5,11 @@ import Navigation from '../Navigation/Navigation';
 import { connect } from 'react-redux';
 import InfoCard from '../Info_Card/Info_Card.js';
 import Autocomplete from "../Autocomplete/Autocomplete";
+
 class Home extends Component {
 	constructor(props) {
 		super(props);
 		this.myRef = React.createRef();
-		
 	}
 
 	
@@ -59,6 +59,8 @@ class Home extends Component {
 const mapStateToProps = (state) => ({
 	citys: state.citys.availableCities
 });
+
+
 export default connect(mapStateToProps)(withRouter(Home));
 
 
