@@ -91,7 +91,7 @@ class Autocomplete extends Component {
 				className="p-3 border-right border-bottom border-dark border-left dropdown"
 				onClick={() => this.onClickDeparture(data.name, data.IATA)}>
 				<h4>
-					<strong>City:</strong> {data.city}  <strong>Name: </strong>
+					<strong>City:</strong> {data.city} <strong>Name: </strong>
 					{data.name} <strong>Airport Code:</strong> {data.IATA}
 				</h4>
 			</div>
@@ -102,12 +102,11 @@ class Autocomplete extends Component {
 				className="p-3 border-right border-bottom border-dark border-left dropdown"
 				onClick={() => this.onClickDestination(data.name, data.IATA)}>
 				<h4>
-					<strong>City:</strong> {data.city}  <strong>Name: </strong>
+					<strong>City:</strong> {data.city} <strong>Name: </strong>
 					{data.name} <strong>Airport Code:</strong> {data.IATA}
 				</h4>
 			</div>
 		));
-		console.log(this.state.displayResultDestination === []);
 		return (
 			<div className="">
 				<div className="input-group p-3">

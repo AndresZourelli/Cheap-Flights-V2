@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import { connect } from 'react-redux';
 import InfoCard from '../Info_Card/Info_Card.js';
-import Autocomplete from "../Autocomplete/Autocomplete";
+import Autocomplete from '../Autocomplete/Autocomplete';
 
 class Home extends Component {
 	constructor(props) {
@@ -12,7 +12,6 @@ class Home extends Component {
 		this.myRef = React.createRef();
 	}
 
-	
 	scrollToMyRef = () =>
 		window.scrollTo({
 			top: this.myRef.current.offsetTop,
@@ -30,13 +29,18 @@ class Home extends Component {
 				<div className="Title-container">
 					<Navigation onScroll={this.scrollToMyRef} />
 				</div>
-				<Autocomplete></Autocomplete>
+				<Autocomplete />
 				<div className="home-question-container">
 					<h2>
 						<strong>Where are you traveling from?</strong>
 					</h2>
 					<p>Find your next trip here </p>
 				</div>
+				{this.props.api_image_urls ? (
+					<div>
+						<img src={this.props.api_image_urls.regular} alt="" />
+					</div>
+				) : null}
 				<div className="card_holder card-holder-style">{infer}</div>
 				<div ref={this.myRef} id="about" className="home-about">
 					<div className="home-about-container">
@@ -57,10 +61,8 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => ({
-	citys: state.citys.availableCities
+	citys: state.citys.availableCities,
+	api_image_urls: state.api.city_Image_URL
 });
 
-
 export default connect(mapStateToProps)(withRouter(Home));
-
-
