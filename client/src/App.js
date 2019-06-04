@@ -3,13 +3,8 @@ import './App.css';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import Home from './Components/Home/Home.js';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { connect } from 'react-redux';
-import { fetchCities } from './actions/cityAction';
 
 class App extends Component {
-	componentWillMount() {
-		this.props.fetchCities();
-	}
 	render() {
 		const location = this.props.location;
 		return (
@@ -28,7 +23,5 @@ class App extends Component {
 		);
 	}
 }
-const mapStateToProps = (state) => ({
-	citys: state.citys.cities
-});
-export default withRouter(connect(mapStateToProps, { fetchCities })(App));
+
+export default withRouter(App);
