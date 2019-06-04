@@ -84,6 +84,24 @@ class Autocomplete extends Component {
 		form.fly_to = code;
 		this.setState({ displayResultDestination: [], form: form });
 	};
+
+	handleDateChangeStart = (event) => {
+		let form = {};
+		for (let Element in this.state.form) {
+			form[Element] = this.state.form[Element];
+		}
+		form.date_from = changeDateforAPI(event.target.value);
+		this.setState({ form: form });
+	};
+
+	handleDateChangeStop = (event) => {
+		let form = {};
+		for (let Element in this.state.form) {
+			form[Element] = this.state.form[Element];
+		}
+		form.date_to = changeDateforAPI(event.target.value);
+		this.setState({ form: form });
+	};
 	render() {
 		let indexResultsDepartures = this.state.displayResultDeparture.map((data) => (
 			<div
@@ -142,7 +160,10 @@ class Autocomplete extends Component {
 						</div>
 					)}
 				</div>
-
+				<input id="date" type="date" onChange={this.handleDateChangeStart} />
+				<br />
+				<input id="date" type="date" onChange={this.handleDateChangeStop} />
+				<br />
 				<button onClick={this.onSubmit}>SUBMIT</button>
 			</div>
 		);
@@ -180,4 +201,13 @@ function search(nameKey, myArray) {
 		}
 	}
 	return results;
+}
+
+function changeDateforAPI(date) {
+	let dateParts = date.split('-');
+	let year = dateParts[0];
+	let month = dateParts[1];
+	let day = dateParts[2];
+	let combine = day + '/' + month + '/' + year;
+	return combine;
 }

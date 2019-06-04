@@ -141,3 +141,22 @@ html {
 	word-wrap: normal;
 	/* box-shadow: 5px 6px 50px -5px black */
 }
+
+.image_container_home {
+	position: relative;
+}
+
+.attribution {
+	position: absolute;
+	bottom: 0;
+}
+
+.flight_info {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: nowrap;
+}
+
+.flight_info_items {
+	flex: 0 0 auto
+}

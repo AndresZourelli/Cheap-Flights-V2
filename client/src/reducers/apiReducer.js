@@ -4,7 +4,7 @@ const initialState = {
 	flight_data: [],
 	multi_city_data: [],
 	form: {},
-	city_Image_URL: ''
+	photoData: {}
 };
 
 export default function(state = initialState, action) {
@@ -22,7 +22,7 @@ export default function(state = initialState, action) {
 		case GET_CITY_IMAGE:
 			return {
 				...state,
-				city_Image_URL: action.payload
+				photoData: action.payload
 			};
 		default:
 			return state;

@@ -23,7 +23,7 @@ export const getFlights = (value) => (dispatch) => {
 				.then((res) => {
 					dispatch({
 						type: GET_CITY_IMAGE,
-						payload: res.data.results[0].urls
+						payload: res.data
 					});
 				});
 		})

@@ -24,6 +24,17 @@ class Home extends Component {
 				<InfoCard CityData={data} key={data} {...this.props} />
 			</div>
 		));
+
+		const flights = (this.props.flightsData || []).map((data, k) => (
+			<div key={k} className="flight_info">
+				<h4 className="flight_info_items">From: {data.cityFrom}</h4>
+				<h4 className="flight_info_items">To: {data.cityTo}</h4>
+				<h4 className="flight_info_items">Price: {data.price}</h4>
+				<h4 className="flight_info_items">Flight time to: {data.fly_duration}</h4>
+				<h4 className="flight_info_items">Return Flight time: {data.return_duration}</h4>
+			</div>
+		));
+
 		return (
 			<div className="full-height">
 				<div className="Title-container">
@@ -36,9 +47,10 @@ class Home extends Component {
 					</h2>
 					<p>Find your next trip here </p>
 				</div>
-				{this.props.api_image_urls ? (
-					<div>
-						<img src={this.props.api_image_urls.regular} alt="" />
+				{Object.keys(this.props.apiPhoto).length > 0 ? (
+					<div className="image_container_home">
+						<img src={this.props.apiPhoto.results[0].urls.regular} alt="" />
+						<div className="attribution">Image Attribute</div>
 					</div>
 				) : null}
 				<div className="card_holder card-holder-style">{infer}</div>
@@ -55,6 +67,7 @@ class Home extends Component {
 						</p>
 					</div>
 				</div>
+				{flights}
 			</div>
 		);
 	}
@@ -62,7 +75,8 @@ class Home extends Component {
 
 const mapStateToProps = (state) => ({
 	citys: state.citys.availableCities,
-	api_image_urls: state.api.city_Image_URL
+	apiPhoto: state.api.photoData,
+	flightsData: state.api.flight_data
 });
 
 export default connect(mapStateToProps)(withRouter(Home));
