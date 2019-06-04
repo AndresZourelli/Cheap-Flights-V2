@@ -16,8 +16,8 @@ class Autocomplete extends Component {
 				v: '3',
 				date_from: '01/7/2019',
 				date_to: '01/8/2019',
-				nights_in_dst_from: '7',
-				nights_in_dst_to: '10',
+				nights_in_dst_from: '',
+				nights_in_dst_to: '',
 				adults: '1',
 				infants: '0',
 				selected_cabins: 'M',
@@ -102,6 +102,46 @@ class Autocomplete extends Component {
 		form.date_to = changeDateforAPI(event.target.value);
 		this.setState({ form: form });
 	};
+	onAdultChange = (event) => {
+		let form = {};
+		for (let Element in this.state.form) {
+			form[Element] = this.state.form[Element];
+		}
+		form.adults = event.target.value;
+		this.setState({ form: form });
+	};
+	onInfantChange = (event) => {
+		let form = {};
+		for (let Element in this.state.form) {
+			form[Element] = this.state.form[Element];
+		}
+		form.infants = event.target.value;
+		this.setState({ form: form });
+	};
+	onMinNightChange = (event) => {
+		let form = {};
+		for (let Element in this.state.form) {
+			form[Element] = this.state.form[Element];
+		}
+		form.nights_in_dst_from = event.target.value;
+		this.setState({ form: form });
+	};
+	onMaxNightChange = (event) => {
+		let form = {};
+		for (let Element in this.state.form) {
+			form[Element] = this.state.form[Element];
+		}
+		form.nights_in_dst_to = event.target.value;
+		this.setState({ form: form });
+	};
+	onCabinChange = (event) => {
+		let form = {};
+		for (let Element in this.state.form) {
+			form[Element] = this.state.form[Element];
+		}
+		form.selected_cabins = event.target.value;
+		this.setState({ form: form });
+	};
 	render() {
 		let indexResultsDepartures = this.state.displayResultDeparture.map((data) => (
 			<div
@@ -160,10 +200,65 @@ class Autocomplete extends Component {
 						</div>
 					)}
 				</div>
-				<input id="date" type="date" onChange={this.handleDateChangeStart} />
+				<span>
+					From: <input id="date" type="date" onChange={this.handleDateChangeStart} className="mr-4" />
+					To: <input id="date" type="date" onChange={this.handleDateChangeStop} />
+				</span>
 				<br />
-				<input id="date" type="date" onChange={this.handleDateChangeStop} />
-				<br />
+				<div>
+					<span>
+						Adults:{' '}
+						<input
+							id="adult"
+							type="number"
+							defaultValue="1"
+							min="1"
+							step="1"
+							onChange={this.onAdultChange}
+						/>
+					</span>
+					<span>
+						Infants:{' '}
+						<input
+							id="infant"
+							type="number"
+							defaultValue="0"
+							min="0"
+							step="1"
+							onChange={this.onInfantChange}
+						/>
+					</span>
+					<span>
+						Min Nights:{' '}
+						<input
+							id="nights"
+							type="number"
+							defaultValue="0"
+							min="0"
+							step="1"
+							onChange={this.onMinNightChange}
+						/>
+					</span>
+					<span>
+						Max Nights:{' '}
+						<input
+							id="nights"
+							type="number"
+							defaultValue="0"
+							min="0"
+							step="1"
+							onChange={this.onMaxNightChange}
+						/>
+					</span>
+					<span>
+						<select name="Cabin" onChange={this.onCabinChange}>
+							<option value="M">Economy</option>
+							<option value="W">Economy Premium</option>
+							<option value="C">Business</option>
+							<option value="F">First Class</option>
+						</select>
+					</span>
+				</div>
 				<button onClick={this.onSubmit}>SUBMIT</button>
 			</div>
 		);

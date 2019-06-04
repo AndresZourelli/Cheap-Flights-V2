@@ -3,7 +3,6 @@ import './Home.css';
 import { withRouter } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import { connect } from 'react-redux';
-import InfoCard from '../Info_Card/Info_Card.js';
 import Autocomplete from '../Autocomplete/Autocomplete';
 
 class Home extends Component {
@@ -19,12 +18,6 @@ class Home extends Component {
 		});
 
 	render() {
-		const infer = (this.props.citys || []).map((data, k) => (
-			<div key={k} className="holder">
-				<InfoCard CityData={data} key={data} {...this.props} />
-			</div>
-		));
-
 		const flights = (this.props.flightsData || []).map((data, k) => (
 			<div key={k} className="flight_info">
 				<h4 className="flight_info_items">From: {data.cityFrom}</h4>
@@ -53,7 +46,7 @@ class Home extends Component {
 						<div className="attribution">Image Attribute</div>
 					</div>
 				) : null}
-				<div className="card_holder card-holder-style">{infer}</div>
+
 				<div ref={this.myRef} id="about" className="home-about">
 					<div className="home-about-container">
 						<h1>
