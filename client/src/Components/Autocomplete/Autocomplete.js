@@ -201,22 +201,26 @@ class Autocomplete extends Component {
 					)}
 				</div>
 				<span>
-					From:
-					<input
-						id="date"
-						type="date"
-						onChange={this.handleDateChangeStart}
-						className="mr-4 form-control w-25"
-					/>
-					<span />
-					To:
-					<input
-						id="date"
-						type="date"
-						onChange={this.handleDateChangeStop}
-						className="form-control m-3 w-25"
-						style={{ display: 'inherit' }}
-					/>
+					<span>
+						From:{' '}
+						<input
+							id="date"
+							type="date"
+							onChange={this.handleDateChangeStart}
+							className="m-3 form-control w-25"
+							style={{ display: 'inherit' }}
+						/>
+					</span>
+					<span>
+						To:
+						<input
+							id="date"
+							type="date"
+							onChange={this.handleDateChangeStop}
+							className="form-control m-3 w-25"
+							style={{ display: 'inherit' }}
+						/>
+					</span>
 				</span>
 				<br />
 				<div>
