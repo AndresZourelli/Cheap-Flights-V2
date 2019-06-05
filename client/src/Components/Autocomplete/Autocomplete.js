@@ -201,20 +201,37 @@ class Autocomplete extends Component {
 					)}
 				</div>
 				<span>
-					From: <input id="date" type="date" onChange={this.handleDateChangeStart} className="mr-4" />
-					To: <input id="date" type="date" onChange={this.handleDateChangeStop} />
+					From:
+					<input
+						id="date"
+						type="date"
+						onChange={this.handleDateChangeStart}
+						className="mr-4 form-control w-25"
+					/>
+					<span />
+					To:
+					<input
+						id="date"
+						type="date"
+						onChange={this.handleDateChangeStop}
+						className="form-control m-3 w-25"
+						style={{ display: 'inherit' }}
+					/>
 				</span>
 				<br />
 				<div>
 					<span>
-						Adults:{' '}
+						Adults:
 						<input
+							aria-describedby="basic-addon1"
 							id="adult"
 							type="number"
 							defaultValue="1"
 							min="1"
 							step="1"
 							onChange={this.onAdultChange}
+							className="form-control m-3 w-25"
+							style={{ display: 'inherit' }}
 						/>
 					</span>
 					<span>
@@ -226,6 +243,8 @@ class Autocomplete extends Component {
 							min="0"
 							step="1"
 							onChange={this.onInfantChange}
+							className="form-control m-3 w-25"
+							style={{ display: 'inherit' }}
 						/>
 					</span>
 					<span>
@@ -237,6 +256,8 @@ class Autocomplete extends Component {
 							min="0"
 							step="1"
 							onChange={this.onMinNightChange}
+							className="form-control m-3 w-25"
+							style={{ display: 'inherit' }}
 						/>
 					</span>
 					<span>
@@ -248,10 +269,16 @@ class Autocomplete extends Component {
 							min="0"
 							step="1"
 							onChange={this.onMaxNightChange}
+							className="form-control m-3 w-25"
+							style={{ display: 'inherit' }}
 						/>
 					</span>
 					<span>
-						<select name="Cabin" onChange={this.onCabinChange}>
+						<select
+							name="Cabin"
+							onChange={this.onCabinChange}
+							className="form-control m-3 w-25"
+							style={{ display: 'inherit' }}>
 							<option value="M">Economy</option>
 							<option value="W">Economy Premium</option>
 							<option value="C">Business</option>
