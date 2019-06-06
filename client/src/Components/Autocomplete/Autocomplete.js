@@ -167,65 +167,71 @@ class Autocomplete extends Component {
 		));
 		return (
 			<div className="">
-				<div className="input-group p-3">
-					<input
-						type="text"
-						value={this.state.form.fly_from}
-						className="form-control"
-						placeholder="Fly From"
-						onChange={(e) => this.onChangeDeparture(e)}
-						aria-label="Username"
-						aria-describedby="basic-addon1"
-					/>
-					{this.state.displayResultDeparture.length === 0 ? null : (
-						<div style={{ width: '100%', position: 'relative' }}>
-							<div className="dropdown_list">{indexResultsDepartures}</div>
+				<span style={{ display: 'flex', alignItems: 'center' }}>
+					<div className="p-3 w-25">
+						<input
+							type="text"
+							value={this.state.form.fly_from}
+							className="form-control "
+							placeholder="Fly From"
+							onChange={(e) => this.onChangeDeparture(e)}
+							aria-label="Username"
+							aria-describedby="basic-addon1"
+						/>
+						{this.state.displayResultDeparture.length === 0 ? null : (
+							<div style={{ width: '100%', position: 'relative' }}>
+								<div className="dropdown_list">{indexResultsDepartures}</div>
+							</div>
+						)}
+					</div>
+					<div className="p-3 w-25">
+						<input
+							type="text"
+							value={this.state.form.fly_to}
+							className="form-control "
+							placeholder="Fly to"
+							onChange={(e) => this.onChangeDestination(e)}
+							aria-label="Username"
+							aria-describedby="basic-addon1"
+						/>
+						{this.state.displayResultDestination.length === 0 ? null : (
+							<div style={{ width: '100%', position: 'relative' }}>
+								<div className="dropdown_list">{indexResultsDestination}</div>
+							</div>
+						)}
+					</div>
+					<div class="input-group m-3 w-25">
+						<div class="input-group-prepend">
+							<span class="input-group-text">From:</span>
 						</div>
-					)}
-				</div>
-
-				<div className="input-group p-3">
-					<input
-						type="text"
-						value={this.state.form.fly_to}
-						className="form-control"
-						placeholder="Fly to"
-						onChange={(e) => this.onChangeDestination(e)}
-						aria-label="Username"
-						aria-describedby="basic-addon1"
-					/>
-					{this.state.displayResultDestination.length === 0 ? null : (
-						<div style={{ width: '100%', position: 'relative' }}>
-							<div className="dropdown_list">{indexResultsDestination}</div>
-						</div>
-					)}
-				</div>
-				<span>
-					<span>
-						From:{' '}
 						<input
 							id="date"
 							type="date"
 							onChange={this.handleDateChangeStart}
-							className="m-3 form-control w-25"
+							className=" form-control w-25"
 							style={{ display: 'inherit' }}
 						/>
-					</span>
-					<span>
-						To:
+					</div>
+					<div class="input-group m-3 w-25">
+						<div class="input-group-prepend">
+							<span class="input-group-text">To:</span>
+						</div>
 						<input
 							id="date"
 							type="date"
 							onChange={this.handleDateChangeStop}
-							className="form-control m-3 w-25"
+							className="form-control w-25"
 							style={{ display: 'inherit' }}
 						/>
-					</span>
+					</div>
 				</span>
+				<span />
 				<br />
 				<div>
-					<span>
-						Adults:
+					<div class="input-group m-3 w-25">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Adults:</span>
+						</div>
 						<input
 							aria-describedby="basic-addon1"
 							id="adult"
@@ -234,10 +240,10 @@ class Autocomplete extends Component {
 							min="1"
 							step="1"
 							onChange={this.onAdultChange}
-							className="form-control m-3 w-25"
+							className="form-control"
 							style={{ display: 'inherit' }}
 						/>
-					</span>
+					</div>
 					<span>
 						Infants:{' '}
 						<input
