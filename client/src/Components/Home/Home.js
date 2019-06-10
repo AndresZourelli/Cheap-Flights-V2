@@ -33,20 +33,14 @@ class Home extends Component {
 				<div className="Title-container">
 					<Navigation onScroll={this.scrollToMyRef} />
 				</div>
-				<Autocomplete />
+
 				<div className="home-question-container">
 					<h2>
-						<strong>Where are you traveling from?</strong>
+						<strong>Where do you want to escape to?</strong>
 					</h2>
 					<p>Find your next trip here </p>
 				</div>
-				{Object.keys(this.props.apiPhoto).length > 0 ? (
-					<div className="image_container_home">
-						<img src={this.props.apiPhoto.results[0].urls.regular} alt="" />
-						<div className="attribution">Image Attribute</div>
-					</div>
-				) : null}
-
+				<Autocomplete />
 				<div ref={this.myRef} id="about" className="home-about">
 					<div className="home-about-container">
 						<h1>
@@ -60,6 +54,12 @@ class Home extends Component {
 						</p>
 					</div>
 				</div>
+				{Object.keys(this.props.apiPhoto).length > 0 ? (
+					<div className="image_container_home">
+						<img src={this.props.apiPhoto.results[0].urls.regular} alt="" />
+						<div className="attribution">Image Attribute</div>
+					</div>
+				) : null}
 				{flights}
 			</div>
 		);

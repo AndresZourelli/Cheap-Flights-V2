@@ -2,6 +2,11 @@
     cursor: pointer;
 }
 
+.autocomplete {
+    padding-left: 72px;
+    padding-right: 20px;
+}
+
 .dropdown_list {
     width: 100%;
     position: absolute;
@@ -19,4 +24,8 @@
 
 .input_container_items {
     flex: 0 0 50%;
+}
+
+.input_container_items_header {
+    flex: 0 0 25%;
 }

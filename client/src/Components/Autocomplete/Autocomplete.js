@@ -166,9 +166,12 @@ class Autocomplete extends Component {
 			</div>
 		));
 		return (
-			<div className="">
-				<span className="input_container">
-					<div className="p-3 w-50 input_container_items">
+			<div className="autocomplete">
+				<div className="input_container">
+					<div class="input-group p-3 input_container_items">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Fly From:</span>
+						</div>
 						<input
 							type="text"
 							value={this.state.form.fly_from}
@@ -184,13 +187,17 @@ class Autocomplete extends Component {
 							</div>
 						)}
 					</div>
-					<div className="p-3 w-50 input_container_items">
+
+					<div class="input-group p-3 input_container_items">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Fly To:</span>
+						</div>
 						<input
 							type="text"
 							value={this.state.form.fly_to}
-							className="form-control "
-							placeholder="Fly to"
-							onChange={(e) => this.onChangeDestination(e)}
+							className="form-control  "
+							placeholder="Fly To"
+							onChange={(e) => this.onChangeDeparture(e)}
 							aria-label="Username"
 							aria-describedby="basic-addon1"
 						/>
@@ -200,7 +207,7 @@ class Autocomplete extends Component {
 							</div>
 						)}
 					</div>
-					<div class="input-group p-3 input_container_items">
+					<div class="input-group p-3 input_container_items_header">
 						<div class="input-group-prepend">
 							<span class="input-group-text">From:</span>
 						</div>
@@ -212,7 +219,7 @@ class Autocomplete extends Component {
 							style={{ display: 'inherit' }}
 						/>
 					</div>
-					<div class="input-group p-3  input_container_items">
+					<div class="input-group p-3  input_container_items_header">
 						<div class="input-group-prepend">
 							<span class="input-group-text">To:</span>
 						</div>
@@ -224,11 +231,8 @@ class Autocomplete extends Component {
 							style={{ display: 'inherit' }}
 						/>
 					</div>
-				</span>
-				<span />
-				<br />
-				<div className="input_container">
-					<div class="input-group p-3 input_container_items">
+
+					<div class="input-group p-3 input_container_items_header">
 						<div class="input-group-prepend">
 							<span class="input-group-text">Adults:</span>
 						</div>
@@ -244,7 +248,7 @@ class Autocomplete extends Component {
 							style={{ display: 'inherit' }}
 						/>
 					</div>
-					<div class="input-group p-3 input_container_items">
+					<div class="input-group p-3 input_container_items_header">
 						<div class="input-group-prepend">
 							<span class="input-group-text">Infants:</span>
 						</div>
@@ -259,7 +263,7 @@ class Autocomplete extends Component {
 							style={{ display: 'inherit' }}
 						/>
 					</div>
-					<div class="input-group p-3 input_container_items">
+					<div class="input-group p-3 input_container_items_header">
 						<div class="input-group-prepend">
 							<span class="input-group-text">Min Nights:</span>
 						</div>
@@ -274,7 +278,7 @@ class Autocomplete extends Component {
 							style={{ display: 'inherit' }}
 						/>
 					</div>
-					<div class="input-group p-3 input_container_items">
+					<div class="input-group p-3 input_container_items_header">
 						<div class="input-group-prepend">
 							<span class="input-group-text">Max Nights:</span>
 						</div>
@@ -289,21 +293,25 @@ class Autocomplete extends Component {
 							style={{ display: 'inherit' }}
 						/>
 					</div>
-
-					<span className="w-50">
+					<div class="input-group p-3 input_container_items_header">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Class:</span>
+						</div>
 						<select
 							name="Cabin"
 							onChange={this.onCabinChange}
-							className="form-control m-3 w-25"
+							className="form-control"
 							style={{ display: 'inherit' }}>
 							<option value="M">Economy</option>
 							<option value="W">Economy Premium</option>
 							<option value="C">Business</option>
 							<option value="F">First Class</option>
 						</select>
-					</span>
+					</div>
 				</div>
-				<button onClick={this.onSubmit}>SUBMIT</button>
+				<button className="btn btn-secondary " onClick={this.onSubmit}>
+					SUBMIT
+				</button>
 			</div>
 		);
 	}
