@@ -167,12 +167,12 @@ class Autocomplete extends Component {
 		));
 		return (
 			<div className="">
-				<span style={{ display: 'flex', alignItems: 'center' }}>
-					<div className="p-3 w-25">
+				<span className="input_container">
+					<div className="p-3 w-50 input_container_items">
 						<input
 							type="text"
 							value={this.state.form.fly_from}
-							className="form-control "
+							className="form-control  "
 							placeholder="Fly From"
 							onChange={(e) => this.onChangeDeparture(e)}
 							aria-label="Username"
@@ -184,7 +184,7 @@ class Autocomplete extends Component {
 							</div>
 						)}
 					</div>
-					<div className="p-3 w-25">
+					<div className="p-3 w-50 input_container_items">
 						<input
 							type="text"
 							value={this.state.form.fly_to}
@@ -200,7 +200,7 @@ class Autocomplete extends Component {
 							</div>
 						)}
 					</div>
-					<div class="input-group m-3 w-25">
+					<div class="input-group p-3 input_container_items">
 						<div class="input-group-prepend">
 							<span class="input-group-text">From:</span>
 						</div>
@@ -208,11 +208,11 @@ class Autocomplete extends Component {
 							id="date"
 							type="date"
 							onChange={this.handleDateChangeStart}
-							className=" form-control w-25"
+							className=" form-control"
 							style={{ display: 'inherit' }}
 						/>
 					</div>
-					<div class="input-group m-3 w-25">
+					<div class="input-group p-3  input_container_items">
 						<div class="input-group-prepend">
 							<span class="input-group-text">To:</span>
 						</div>
@@ -220,15 +220,15 @@ class Autocomplete extends Component {
 							id="date"
 							type="date"
 							onChange={this.handleDateChangeStop}
-							className="form-control w-25"
+							className="form-control"
 							style={{ display: 'inherit' }}
 						/>
 					</div>
 				</span>
 				<span />
 				<br />
-				<div>
-					<div class="input-group m-3 w-25">
+				<div className="input_container">
+					<div class="input-group p-3 input_container_items">
 						<div class="input-group-prepend">
 							<span class="input-group-text">Adults:</span>
 						</div>
@@ -244,8 +244,10 @@ class Autocomplete extends Component {
 							style={{ display: 'inherit' }}
 						/>
 					</div>
-					<span>
-						Infants:{' '}
+					<div class="input-group p-3 input_container_items">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Infants:</span>
+						</div>
 						<input
 							id="infant"
 							type="number"
@@ -253,12 +255,14 @@ class Autocomplete extends Component {
 							min="0"
 							step="1"
 							onChange={this.onInfantChange}
-							className="form-control m-3 w-25"
+							className="form-control"
 							style={{ display: 'inherit' }}
 						/>
-					</span>
-					<span>
-						Min Nights:{' '}
+					</div>
+					<div class="input-group p-3 input_container_items">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Min Nights:</span>
+						</div>
 						<input
 							id="nights"
 							type="number"
@@ -266,12 +270,14 @@ class Autocomplete extends Component {
 							min="0"
 							step="1"
 							onChange={this.onMinNightChange}
-							className="form-control m-3 w-25"
+							className="form-control"
 							style={{ display: 'inherit' }}
 						/>
-					</span>
-					<span>
-						Max Nights:{' '}
+					</div>
+					<div class="input-group p-3 input_container_items">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Max Nights:</span>
+						</div>
 						<input
 							id="nights"
 							type="number"
@@ -279,11 +285,12 @@ class Autocomplete extends Component {
 							min="0"
 							step="1"
 							onChange={this.onMaxNightChange}
-							className="form-control m-3 w-25"
+							className="form-control"
 							style={{ display: 'inherit' }}
 						/>
-					</span>
-					<span>
+					</div>
+
+					<span className="w-50">
 						<select
 							name="Cabin"
 							onChange={this.onCabinChange}

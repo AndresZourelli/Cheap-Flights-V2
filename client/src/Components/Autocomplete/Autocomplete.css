@@ -10,3 +10,13 @@
     overflow: auto;
     height: 50vh;
 }
+
+.input_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.input_container_items {
+    flex: 0 0 50%;
+}
