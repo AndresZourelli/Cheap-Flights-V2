@@ -25,6 +25,12 @@ class Home extends Component {
 				<h4 className="flight_info_items">Price: {data.price}</h4>
 				<h4 className="flight_info_items">Flight time to: {data.fly_duration}</h4>
 				<h4 className="flight_info_items">Return Flight time: {data.return_duration}</h4>
+				<h4 className="flight_info_items">Nights in Destination: {data.nightsInDest}</h4>
+				{data.route.length > 2 ? (
+					<h4 className="flight_info_items">
+						Transfers: {data.route.map((element, idx) => <div id={element.id}>{element.flyTo}</div>)}
+					</h4>
+				) : null}
 			</div>
 		));
 

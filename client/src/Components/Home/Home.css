@@ -154,9 +154,9 @@ html {
 .flight_info {
 	display: flex;
 	justify-content: space-around;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 }
 
 .flight_info_items {
-	flex: 0 0 auto
+	flex: 0 0 25%
 }

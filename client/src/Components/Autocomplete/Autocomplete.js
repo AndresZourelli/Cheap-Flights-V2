@@ -168,9 +168,9 @@ class Autocomplete extends Component {
 		return (
 			<div className="autocomplete">
 				<div className="input_container">
-					<div class="input-group p-3 input_container_items">
-						<div class="input-group-prepend">
-							<span class="input-group-text">Fly From:</span>
+					<div className="input-group p-3 input_container_items">
+						<div className="input-group-prepend">
+							<span className="input-group-text">Fly From:</span>
 						</div>
 						<input
 							type="text"
@@ -188,16 +188,16 @@ class Autocomplete extends Component {
 						)}
 					</div>
 
-					<div class="input-group p-3 input_container_items">
-						<div class="input-group-prepend">
-							<span class="input-group-text">Fly To:</span>
+					<div className="input-group p-3 input_container_items">
+						<div className="input-group-prepend">
+							<span className="input-group-text">Fly To:</span>
 						</div>
 						<input
 							type="text"
 							value={this.state.form.fly_to}
 							className="form-control  "
 							placeholder="Fly To"
-							onChange={(e) => this.onChangeDeparture(e)}
+							onChange={(e) => this.onChangeDestination(e)}
 							aria-label="Username"
 							aria-describedby="basic-addon1"
 						/>
@@ -207,9 +207,9 @@ class Autocomplete extends Component {
 							</div>
 						)}
 					</div>
-					<div class="input-group p-3 input_container_items_header">
-						<div class="input-group-prepend">
-							<span class="input-group-text">From:</span>
+					<div className="input-group p-3 input_container_items_header">
+						<div className="input-group-prepend">
+							<span className="input-group-text">From:</span>
 						</div>
 						<input
 							id="date"
@@ -219,9 +219,9 @@ class Autocomplete extends Component {
 							style={{ display: 'inherit' }}
 						/>
 					</div>
-					<div class="input-group p-3  input_container_items_header">
-						<div class="input-group-prepend">
-							<span class="input-group-text">To:</span>
+					<div className="input-group p-3  input_container_items_header">
+						<div className="input-group-prepend">
+							<span className="input-group-text">To:</span>
 						</div>
 						<input
 							id="date"
@@ -232,9 +232,9 @@ class Autocomplete extends Component {
 						/>
 					</div>
 
-					<div class="input-group p-3 input_container_items_header">
-						<div class="input-group-prepend">
-							<span class="input-group-text">Adults:</span>
+					<div className="input-group p-3 input_container_items_header">
+						<div className="input-group-prepend">
+							<span className="input-group-text">Adults:</span>
 						</div>
 						<input
 							aria-describedby="basic-addon1"
@@ -248,9 +248,9 @@ class Autocomplete extends Component {
 							style={{ display: 'inherit' }}
 						/>
 					</div>
-					<div class="input-group p-3 input_container_items_header">
-						<div class="input-group-prepend">
-							<span class="input-group-text">Infants:</span>
+					<div className="input-group p-3 input_container_items_header">
+						<div className="input-group-prepend">
+							<span className="input-group-text">Infants:</span>
 						</div>
 						<input
 							id="infant"
@@ -263,9 +263,9 @@ class Autocomplete extends Component {
 							style={{ display: 'inherit' }}
 						/>
 					</div>
-					<div class="input-group p-3 input_container_items_header">
-						<div class="input-group-prepend">
-							<span class="input-group-text">Min Nights:</span>
+					<div className="input-group p-3 input_container_items_header">
+						<div className="input-group-prepend">
+							<span className="input-group-text">Min Nights:</span>
 						</div>
 						<input
 							id="nights"
@@ -278,9 +278,9 @@ class Autocomplete extends Component {
 							style={{ display: 'inherit' }}
 						/>
 					</div>
-					<div class="input-group p-3 input_container_items_header">
-						<div class="input-group-prepend">
-							<span class="input-group-text">Max Nights:</span>
+					<div className="input-group p-3 input_container_items_header">
+						<div className="input-group-prepend">
+							<span className="input-group-text">Max Nights:</span>
 						</div>
 						<input
 							id="nights"
@@ -293,9 +293,9 @@ class Autocomplete extends Component {
 							style={{ display: 'inherit' }}
 						/>
 					</div>
-					<div class="input-group p-3 input_container_items_header">
-						<div class="input-group-prepend">
-							<span class="input-group-text">Class:</span>
+					<div className="input-group p-3 input_container_items_header">
+						<div className="input-group-prepend">
+							<span className="input-group-text">Class:</span>
 						</div>
 						<select
 							name="Cabin"
@@ -309,7 +309,7 @@ class Autocomplete extends Component {
 						</select>
 					</div>
 				</div>
-				<button className="btn btn-secondary " onClick={this.onSubmit}>
+				<button className="btn btn-secondary m-3" onClick={this.onSubmit}>
 					SUBMIT
 				</button>
 			</div>
