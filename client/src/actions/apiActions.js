@@ -11,7 +11,6 @@ export const getFlights = (value) => (dispatch) => {
 				type: GET_FLIGHTS,
 				payload: cities.data.data
 			});
-			console.log(process.env.REACT_APP_UPLASH_API_KEY);
 			axios
 				.get('https://api.unsplash.com/search/photos', {
 					params: {

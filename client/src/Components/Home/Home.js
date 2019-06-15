@@ -28,11 +28,27 @@ class Home extends Component {
 				<h4 className="flight_info_items">Nights in Destination: {data.nightsInDest}</h4>
 				{data.route.length > 2 ? (
 					<h4 className="flight_info_items">
-						Transfers: {data.route.map((element, idx) => <div id={element.id}>{element.flyTo}</div>)}
+						Transfers: {data.route.map((element, idx) => <div key={element.id}>{element.flyTo}</div>)}
 					</h4>
 				) : null}
 			</div>
 		));
+
+		const why = (
+			<div ref={this.myRef} id="about" className="home-about">
+				<div className="home-about-container">
+					<h1>
+						<strong>Why</strong> Choose Us?
+					</h1>
+					<br />
+					<p>Here at Cheap Flights we do the heavy lifting for you!</p>
+					<p>
+						We manually search for the best deals on flights and share them with you in one easy to search
+						place.
+					</p>
+				</div>
+			</div>
+		);
 
 		return (
 			<div className="full-height">
@@ -47,19 +63,7 @@ class Home extends Component {
 					<p>Find your next trip here </p>
 				</div>
 				<Autocomplete />
-				<div ref={this.myRef} id="about" className="home-about">
-					<div className="home-about-container">
-						<h1>
-							<strong>Why</strong> Choose Us?
-						</h1>
-						<br />
-						<p>Here at Cheap Flights we do the heavy lifting for you!</p>
-						<p>
-							We manually search for the best deals on flights and share them with you in one easy to
-							search place.
-						</p>
-					</div>
-				</div>
+				{this.props.flightsData.length === 0 ? why : null}
 				{Object.keys(this.props.apiPhoto).length > 0 ? (
 					<div className="image_container_home">
 						<img src={this.props.apiPhoto.results[0].urls.regular} alt="" />
@@ -75,7 +79,8 @@ class Home extends Component {
 const mapStateToProps = (state) => ({
 	citys: state.citys.availableCities,
 	apiPhoto: state.api.photoData,
-	flightsData: state.api.flight_data
+	flightsData: state.api.flight_data,
+	loadingData: state.api.loading
 });
 
 export default connect(mapStateToProps)(withRouter(Home));

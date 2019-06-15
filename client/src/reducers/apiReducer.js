@@ -4,7 +4,8 @@ const initialState = {
 	flight_data: [],
 	multi_city_data: [],
 	form: {},
-	photoData: {}
+	photoData: {},
+	loading: false
 };
 
 export default function(state = initialState, action) {
@@ -12,12 +13,14 @@ export default function(state = initialState, action) {
 		case GET_FLIGHTS:
 			return {
 				...state,
-				flight_data: action.payload
+				flight_data: action.payload,
+				loading: false
 			};
 		case SET_FLIGHT_FORM:
 			return {
 				...state,
-				form: action.payload
+				form: action.payload,
+				loading: true
 			};
 		case GET_CITY_IMAGE:
 			return {

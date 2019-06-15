@@ -309,9 +309,16 @@ class Autocomplete extends Component {
 						</select>
 					</div>
 				</div>
-				<button className="btn btn-secondary m-3" onClick={this.onSubmit}>
-					SUBMIT
-				</button>
+				{this.props.loading ? (
+					<button className="btn btn-primary" type="button" disabled>
+						<span className="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
+						Loading...
+					</button>
+				) : (
+					<button className="btn btn-secondary m-3" onClick={this.onSubmit}>
+						SUBMIT
+					</button>
+				)}
 			</div>
 		);
 	}
@@ -328,7 +335,8 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const mapStateToProps = (state) => ({
-	flightDataUpdated: state.api.form
+	flightDataUpdated: state.api.form,
+	loading: state.api.loading
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Autocomplete);
