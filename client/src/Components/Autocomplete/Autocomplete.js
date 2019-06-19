@@ -312,7 +312,7 @@ class Autocomplete extends Component {
 					</div>
 				</div>
 				{this.props.loading ? (
-					<button className="btn btn-primary" type="button" disabled>
+					<button className="btn btn-primary m-3" type="button" disabled>
 						<span className="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
 						Loading...
 					</button>
