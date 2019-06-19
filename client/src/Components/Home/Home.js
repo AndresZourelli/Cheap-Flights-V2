@@ -19,7 +19,7 @@ class Home extends Component {
 
 	render() {
 		const flights = (this.props.flightsData || []).map((data, k) => (
-			<div key={k} className="flight_info">
+			<div key={k} className="flight_info p-5">
 				<h4 className="flight_info_items">From: {data.cityFrom}</h4>
 				<h4 className="flight_info_items">To: {data.cityTo}</h4>
 				<h4 className="flight_info_items">Price: {data.price}</h4>
@@ -70,7 +70,7 @@ class Home extends Component {
 						<div className="attribution">Image Attribute</div>
 					</div>
 				) : null}
-				{flights}
+				<div className="flight_holder">{flights}</div>
 			</div>
 		);
 	}
