@@ -153,12 +153,12 @@ html {
 
 .flight_info {
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 }
 
 .flight_info_items {
-	flex: 0 0 25%
+	flex: 0 0 33%
 }
 
 .flight_holder .flight_info:nth-child(1) {

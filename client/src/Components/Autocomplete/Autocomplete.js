@@ -150,8 +150,6 @@ class Autocomplete extends Component {
 				onClick={() => this.onClickDeparture(data.name, data.IATA)}>
 				<h4>
 					<strong>{data.city}</strong> ({data.IATA}) <p>{data.name}</p>
-					{/* <strong>City:</strong> {data.city} <strong>Name: </strong>
-					{data.name} <strong>Airport Code:</strong> {data.IATA} */}
 				</h4>
 			</div>
 		));
@@ -161,9 +159,7 @@ class Autocomplete extends Component {
 				className="p-3 border-right border-bottom border-dark border-left dropdown"
 				onClick={() => this.onClickDestination(data.name, data.IATA)}>
 				<h4>
-					<strong>City:</strong> {data.city} ({data.IATA})
-					{/* <strong>City:</strong> {data.city} <strong>Name: </strong>
-					{data.name} <strong>Airport Code:</strong> {data.IATA} */}
+					<strong>{data.city}</strong> ({data.IATA}) <p>{data.name}</p>
 				</h4>
 			</div>
 		));
