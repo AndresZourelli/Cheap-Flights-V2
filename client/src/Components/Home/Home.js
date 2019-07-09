@@ -62,10 +62,7 @@ class Home extends Component {
 					</h1>
 					<br />
 					<p>Here at Cheap Flights we do the heavy lifting for you!</p>
-					<p>
-						We manually search for the best deals on flights and share them with you in one easy to search
-						place.
-					</p>
+					<p>We search for the best deals on flights and share them with you in one easy to search place.</p>
 				</div>
 			</div>
 		);
@@ -86,7 +83,18 @@ class Home extends Component {
 				{this.props.flightsData.length === 0 ? why : null}
 				{Object.keys(this.props.apiPhoto).length > 0 ? (
 					<div className="image_container_home">
-						<img src={this.props.apiPhoto.results[0].urls.regular} alt="" />
+						<h1 className="image-title image-home-flex">{this.props.flightsData[0].cityTo}</h1>
+						<div className="image_holder_home image-home-flex">
+							<div className="attribution">
+								<img
+									className="image-home"
+									src={this.props.apiPhoto.results[0].urls.regular}
+									alt={this.props.flightsData[0].cityTo}
+								/>
+								<div className="bottom-right">Hello</div>
+							</div>
+						</div>
+
 						{/* <div className="attribution">Image Attribute</div> */}
 					</div>
 				) : null}
