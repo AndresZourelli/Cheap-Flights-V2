@@ -96,8 +96,6 @@ class Home extends Component {
 								</a>
 							</div>
 						</div>
-
-						{/* <div className="attribution">Image Attribute</div> */}
 					</div>
 				) : null}
 				<div className="flight_holder">{flights}</div>

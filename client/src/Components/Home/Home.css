@@ -202,6 +202,14 @@ html {
 	border-radius: 0px 0px 20px 20px;
 }
 
+.flight_holder .flight_info:nth-child(odd) {
+	background: rgb(237, 240, 248);
+}
+
 .image-title {
 	font-size: 3.5rem;
+}
+
+.flight_holder a {
+	text-decoration: none
 }
