@@ -158,6 +158,8 @@ html {
 }
 
 .attribution {
+	display: table;
+	margin: auto;
 	position: relative;
 	text-align: center;
 	color: white;

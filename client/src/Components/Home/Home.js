@@ -91,7 +91,9 @@ class Home extends Component {
 									src={this.props.apiPhoto.results[0].urls.regular}
 									alt={this.props.flightsData[0].cityTo}
 								/>
-								<div className="bottom-right">Hello</div>
+								<a className="bottom-right" href={this.props.apiPhoto.results[0].user.portfolio_url}>
+									{this.props.apiPhoto.results[0].user.name}
+								</a>
 							</div>
 						</div>
 
